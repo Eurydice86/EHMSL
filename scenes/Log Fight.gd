@@ -21,14 +21,14 @@ func _ready():
 	db.query("SELECT * FROM " + tableName + " ORDER BY " + sortBy + " ASC;")
 	res = db.query_result
 	for i in res:
-		$VBoxContainer/HBoxContainerButtons/WinnerButton.add_item(i.name)
-		$VBoxContainer/HBoxContainerButtons/LoserButton.add_item(i.name)
+		$VBoxContainer/HBoxContainerWinner/WinnerButton.add_item(i.name)
+		$VBoxContainer/HBoxContainerLoser/LoserButton.add_item(i.name)
 
 func _on_OK_pressed():
-	winnerID = $VBoxContainer/HBoxContainerButtons/WinnerButton.get_selected_id()
-	loserID = $VBoxContainer/HBoxContainerButtons/LoserButton.get_selected_id()
+	winnerID = $VBoxContainer/HBoxContainerWinner/WinnerButton.get_selected_id()
+	loserID = $VBoxContainer/HBoxContainerLoser/LoserButton.get_selected_id()
 	$VBoxContainer/PopupDialog.visible = true
-	$VBoxContainer/PopupDialog/VBoxContainer/RichTextLabel.text = "You are about to log a fight, in which " + res[winnerID].name + " defeated " + res[loserID].name + ". Are you sure you want to proceed?"
+	$VBoxContainer/PopupDialog/RichTextLabel.text = "You are about to log a fight, in which " + res[winnerID].name + " defeated " + res[loserID].name + ". Are you sure you want to proceed?"
 
 
 func _on_Button_Return_pressed():

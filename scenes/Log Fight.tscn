@@ -16,49 +16,75 @@ anchor_bottom = 0.5
 margin_top = -71.0
 margin_bottom = 71.0
 
-[node name="HBoxContainerText" type="HBoxContainer" parent="VBoxContainer"]
+[node name="HBoxContainerWinner" type="HBoxContainer" parent="VBoxContainer"]
 margin_right = 1024.0
+margin_bottom = 42.0
 
-[node name="WinnerText" type="RichTextLabel" parent="VBoxContainer/HBoxContainerText"]
+[node name="WinnerText" type="RichTextLabel" parent="VBoxContainer/HBoxContainerWinner"]
+margin_right = 969.0
+margin_bottom = 42.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 text = "Choose fight winner"
 
-[node name="LoserText" type="RichTextLabel" parent="VBoxContainer/HBoxContainerText"]
-margin_left = 4.0
-margin_right = 4.0
-text = "Choose fight loser"
-
-[node name="HBoxContainerButtons" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 4.0
-margin_right = 1024.0
-margin_bottom = 46.0
-
-[node name="WinnerButton" type="OptionButton" parent="VBoxContainer/HBoxContainerButtons"]
-margin_right = 51.3241
+[node name="WinnerButton" type="OptionButton" parent="VBoxContainer/HBoxContainerWinner"]
+margin_left = 973.0
+margin_right = 1024.32
 margin_bottom = 42.251
 
-[node name="LoserButton" type="OptionButton" parent="VBoxContainer/HBoxContainerButtons"]
-margin_left = 55.0
-margin_right = 106.324
+[node name="HBoxContainerLoser" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 46.0
+margin_right = 1024.0
+margin_bottom = 88.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="LoserText" type="RichTextLabel" parent="VBoxContainer/HBoxContainerLoser"]
+margin_right = 969.0
+margin_bottom = 42.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Choose fight loser"
+
+[node name="LoserButton" type="OptionButton" parent="VBoxContainer/HBoxContainerLoser"]
+margin_left = 973.0
+margin_right = 1024.32
 margin_bottom = 42.251
 
 [node name="OK" type="Button" parent="VBoxContainer"]
-margin_top = 50.0
+margin_top = 92.0
 margin_right = 1024.0
-margin_bottom = 92.251
+margin_bottom = 134.251
+size_flags_horizontal = 3
+size_flags_vertical = 3
 text = "OK"
 
 [node name="Button_Return" type="Button" parent="VBoxContainer"]
-margin_top = 96.0
+margin_top = 138.0
 margin_right = 1024.0
-margin_bottom = 138.251
+margin_bottom = 180.251
+size_flags_horizontal = 3
+size_flags_vertical = 3
 text = "Return to Main menu"
 
 [node name="PopupDialog" type="PopupDialog" parent="VBoxContainer"]
 visible = true
-margin_top = 142.0
+margin_top = 184.0
 margin_right = 1024.0
-margin_bottom = 142.0
+margin_bottom = 184.0
 popup_exclusive = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/PopupDialog"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -250.0
+margin_top = -100.0
+margin_right = 250.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/PopupDialog"]
 anchor_left = 0.5
@@ -70,13 +96,9 @@ margin_top = -23.0
 margin_right = 55.5
 margin_bottom = 23.0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/PopupDialog/VBoxContainer"]
-margin_right = 111.0
-
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PopupDialog/VBoxContainer"]
-margin_top = 4.0
 margin_right = 111.0
-margin_bottom = 46.0
+margin_bottom = 42.0
 
 [node name="Yes_Popup" type="Button" parent="VBoxContainer/PopupDialog/VBoxContainer/HBoxContainer"]
 margin_right = 60.3241
@@ -109,6 +131,7 @@ margin_left = -52.5
 margin_top = -19.5
 margin_right = 52.5
 margin_bottom = 19.5
+size_flags_horizontal = 3
 text = "Fight logged!"
 
 [node name="Timer" type="Timer" parent="VBoxContainer/PopupDialog/Logged_Confirmation"]

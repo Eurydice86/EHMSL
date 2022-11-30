@@ -12,14 +12,10 @@ func _ready():
 	var sortBy = "rating"
 	db.query("SELECT * FROM " + tableName + " ORDER BY " + sortBy + " DESC;")
 	var res = db.query_result
-	var names = ""
-	var ratings = ""
+	var line = ""
 	for i in res:
-		names += i.name + "\n"
-		ratings += str(i.rating) + "\n"
-	$Names.text = names
-	$Ratings.text = ratings
-
+		line += i.name + ":\t"  + str(i.rating) + "\n"
+	$HBoxContainer/List.text = line
 
 func _on_Button_Return_pressed():
 	get_tree().change_scene("res://scenes/Main Screen.tscn")
