@@ -21,31 +21,31 @@ func _ready():
 	db.query("SELECT * FROM " + tableName + " ORDER BY " + sortBy + " ASC;")
 	res = db.query_result
 	for i in res:
-		$WinnerButton.add_item(i.name)
-		$LoserButton.add_item(i.name)
+		$VBoxContainer/HBoxContainerButtons/WinnerButton.add_item(i.name)
+		$VBoxContainer/HBoxContainerButtons/LoserButton.add_item(i.name)
 
 func _on_OK_pressed():
-	winnerID = $WinnerButton.get_selected_id()
-	loserID = $LoserButton.get_selected_id()
-	$PopupDialog.visible = true
-	$PopupDialog/RichTextLabel.text = "You are about to log a fight, in which " + res[winnerID].name + " defeated " + res[loserID].name + ". Are you sure you want to proceed?"
+	winnerID = $VBoxContainer/HBoxContainerButtons/WinnerButton.get_selected_id()
+	loserID = $VBoxContainer/HBoxContainerButtons/LoserButton.get_selected_id()
+	$VBoxContainer/PopupDialog.visible = true
+	$VBoxContainer/PopupDialog/VBoxContainer/RichTextLabel.text = "You are about to log a fight, in which " + res[winnerID].name + " defeated " + res[loserID].name + ". Are you sure you want to proceed?"
 
 
 func _on_Button_Return_pressed():
 	get_tree().change_scene("res://scenes/Main Screen.tscn")
 
 func _on_No_Popup_pressed():
-	$PopupDialog.visible = false
+	$VBoxContainer/PopupDialog.visible = false
 
 
 func _on_Yes_Popup_pressed():
-	$PopupDialog/Logged_Confirmation.visible = true
-	$PopupDialog/Logged_Confirmation/Timer.start()
+	$VBoxContainer/PopupDialog/Logged_Confirmation.visible = true
+	$VBoxContainer/PopupDialog/Logged_Confirmation/Timer.start()
 
 
 func _on_Timer_timeout():
-	$PopupDialog/Logged_Confirmation.visible = false
-	$PopupDialog.visible = false
+	$VBoxContainer/PopupDialog/Logged_Confirmation.visible = false
+	$VBoxContainer/PopupDialog.visible = false
 	add_to_fighters_db()
 	add_to_fights_db()
 
