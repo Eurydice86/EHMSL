@@ -11,6 +11,8 @@ var loserID
 var newRWinner
 var newRLoser
 
+var error = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	db = SQLite.new()
@@ -27,8 +29,14 @@ func _ready():
 func _on_OK_pressed():
 	winnerID = $VBoxContainer/HBoxContainerWinner/WinnerButton.get_selected_id()
 	loserID = $VBoxContainer/HBoxContainerLoser/LoserButton.get_selected_id()
+	if winnerID != loserID:
+		$VBoxContainer/PopupDialog/RichTextLabel.text = "You are about to log a fight, in which " + res[winnerID].name + " defeated " + res[loserID].name + ". Are you sure you want to proceed?"
+		$VBoxContainer/PopupDialog/VBoxContainer/HBoxContainer/Yes_Popup.disabled = false
+	else:
+		$VBoxContainer/PopupDialog/RichTextLabel.text = "You are trying to log an invalid fight. People are not allowed to defeat themselves. Continue?"
+		$VBoxContainer/PopupDialog/VBoxContainer/HBoxContainer/Yes_Popup.disabled = true
 	$VBoxContainer/PopupDialog.visible = true
-	$VBoxContainer/PopupDialog/RichTextLabel.text = "You are about to log a fight, in which " + res[winnerID].name + " defeated " + res[loserID].name + ". Are you sure you want to proceed?"
+	
 
 
 func _on_Button_Return_pressed():
