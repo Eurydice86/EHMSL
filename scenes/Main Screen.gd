@@ -14,15 +14,19 @@ func _on_Button_Exit_pressed():
 
 
 func _on_Button_Show_Ranking_pressed():
-	get_tree().change_scene("res://scenes/Ranking.tscn")
-
-
+	var error_code = get_tree().change_scene("res://scenes/Ranking.tscn")
+	if error_code !=0:
+		print("ERROR: ", error_code)
+		
 func _on_Button_Log_Fight_pressed():
-	get_tree().change_scene("res://scenes/Log Fight.tscn")
-
+	var error_code = get_tree().change_scene("res://scenes/Log Fight.tscn")
+	if error_code !=0:
+		print("ERROR: ", error_code)
 
 func _on_Button_Add_Fighter_pressed():
-	get_tree().change_scene("res://scenes/Add Fighter.tscn")
+	var error_code = get_tree().change_scene("res://scenes/Add Fighter.tscn")
+	if error_code !=0:
+		print("ERROR: ", error_code)
 
 func check_if_db_exists():
 	var db_name_wExtension = db_name + ".db"

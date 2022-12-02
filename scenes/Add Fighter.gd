@@ -19,4 +19,6 @@ func _on_Button_Add_pressed():
 
 
 func _on_Button_Return_pressed():
-	get_tree().change_scene("res://scenes/Main Screen.tscn")
+	var error_code = get_tree().change_scene("res://scenes/Main Screen.tscn")
+	if error_code !=0:
+		print("ERROR: ", error_code)
