@@ -21,37 +21,37 @@ margin_bottom = 44.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 margin_right = 629.0
-margin_bottom = 42.0
+margin_bottom = 45.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Button_Log Fight" type="Button" parent="VBoxContainer/HBoxContainer"]
-margin_right = 168.324
-margin_bottom = 42.251
+margin_right = 207.0
+margin_bottom = 45.251
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Log new fight"
 
 [node name="Button_Show Ranking" type="Button" parent="VBoxContainer/HBoxContainer"]
-margin_left = 172.0
-margin_right = 431.324
-margin_bottom = 42.251
+margin_left = 211.0
+margin_right = 418.0
+margin_bottom = 45.251
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Show Current Ranking"
 
 [node name="Button_Add Fighter" type="Button" parent="VBoxContainer/HBoxContainer"]
-margin_left = 435.0
-margin_right = 629.324
-margin_bottom = 42.251
+margin_left = 422.0
+margin_right = 629.0
+margin_bottom = 45.251
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Add new fighter"
 
 [node name="Button_Exit" type="Button" parent="VBoxContainer"]
-margin_top = 46.0
+margin_top = 49.0
 margin_right = 629.0
-margin_bottom = 88.251
+margin_bottom = 94.251
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Exit"

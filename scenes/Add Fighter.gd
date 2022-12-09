@@ -16,7 +16,7 @@ func _on_Button_Add_pressed():
 	dict["rating"] = 1000
 	
 	db.insert_row(tableName, dict)
-
+	$NameInput.text = ""
 
 func _on_Button_Return_pressed():
 	var error_code = get_tree().change_scene("res://scenes/Main Screen.tscn")
